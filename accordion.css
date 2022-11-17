@@ -1,0 +1,76 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    padding: auto;
+    margin: auto;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    background-image:linear-gradient(to bottom, rgba(21, 30, 83, 0.3), rgba(73, 61, 70, 0.4)), url("https://images.pexels.com/photos/5428836/pexels-photo-5428836.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+   }
+.accordion{
+    width: 60rem;
+    height: fit-content;
+    max-height: 100vh;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.7);
+    left: 30%;
+    top:20%;
+    border-radius: 20px;
+    padding: 2em;
+    border: 2px solid rgba( 255, 255, 255, 0.18 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+.accordion h2{
+    font-size: 23px;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+.question{
+    margin-bottom: 1rem;
+    font-size: 18px;
+    border-bottom: 2px solid #999;
+}
+.question::after{
+    content: '+';
+    position: absolute;
+    right: 25px;
+    font-size:20px;
+    cursor: pointer;
+
+}
+.content-container{
+
+    margin-bottom: 2em;
+}
+.answer{
+    font-size: 15px;
+    line-height: 1.5;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition-duration: 0.5s;
+}
+/*for the js part, anytime it is active, the naswer height changes to 150px
+This ensures each time the active classlist is added, the data will display*/
+
+.content-container.active .answer{
+    height: 70px;
+}
+.content-container.active .question{
+    font-size: 15px;
+    transition-duration: 0.5s;
+}
+.content-container.active .question::after{
+    content: '-';
+}
